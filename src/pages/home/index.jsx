@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FiLink } from 'react-icons/fi';
 
 import { Menu } from '../../components/Menu';
