@@ -59,6 +59,12 @@
     background-color: transparent;
 }
 
+.empty-list {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    margin-top: 28px;
+} 
 
 @media (max-width: 780px) {
     .container-links {

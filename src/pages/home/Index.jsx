@@ -3,7 +3,9 @@ import { FiLink } from "react-icons/fi"
 
 import Menu from "../../components/menu/Index"
 import LinkItem from '../../components/LinkItem/Index'
+
 import api from '../../services/api'
+import { saveLink } from '../../services/store-link'
 
 import './Home.css'
 
@@ -20,6 +22,10 @@ function Home () {
       })
       setData(res.data)
       setShowModal(true)
+
+      saveLink('@encurtarLink', res.data)
+
+      setLink('')
 
     }
     catch {
