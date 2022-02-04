@@ -55,7 +55,7 @@ export function Links() {
 
       {emptyList && (
         <div className="link-empty">
-          <h2 className="empty-list">Lita Vazia...</h2>
+          <h2 className="empty-list">Lista Vazia...</h2>
         </div>
       )}
 
