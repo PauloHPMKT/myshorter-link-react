@@ -1,6 +1,6 @@
 //buscar links salvos
-export async function getLinksSave(key) {
-  const myLinks = await localStorage.getItem(key);
+export function getLinksSave(key) {
+  const myLinks = localStorage.getItem(key);
 
   let linksSave = JSON.parse(myLinks) || [];
 
@@ -8,8 +8,8 @@ export async function getLinksSave(key) {
 }
 
 //salvar links no storage
-export async function saveLink(key, newLink) {
-  let linksStorage = await getLinksSave(key);
+export function saveLink(key, newLink) {
+  let linksStorage = getLinksSave(key);
 
   //e ja tiver um link salvo com id, não duplicar
   //some() procura algum item no array
@@ -23,7 +23,7 @@ export async function saveLink(key, newLink) {
   //adicionar novo link na lista
   linksStorage.push(newLink);
 
-  await localStorage.setItem(key, JSON.stringify(linksStorage));
+  localStorage.setItem(key, JSON.stringify(linksStorage));
 
   console.log('link salvo com sucesso');
 }
