@@ -1,15 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import RouterApp from './Routs'
+import { Home } from './pages/home';
+import { Links } from './pages/links';
+import { Error } from './pages/error';
 
-import './App.css'
-
-function App () {
-	return(
-		<div className='app'>
-			<RouterApp />
-		</div>
-	)
+export function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/links" element={<Links />} />
+        <Route path="*" element={<Error />} />{' '}
+        {/* "*" o react entende como notfound */}
+      </Routes>
+    </Router>
+  );
 }
-
-export default App
